@@ -3,7 +3,7 @@ UnQPerp - AI CodeBase Bridge
 Setup script for Python package installation
 
 Created by: Sandeep Gaddam
-Repository: UnQOfficial
+Repository: UnQPerp
 """
 
 from setuptools import setup, find_packages
@@ -18,11 +18,11 @@ setup(
     name="unqperp",
     version="1.0.0",
     author="Sandeep Gaddam",
-    author_email="sandeepgaddam@example.com",
+    author_email="devunq@gmail.com",
     description="AI CodeBase Bridge - Enable AI assistants to access and manage your local codebase",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/sandeepgaddam/UnQOfficial",
+    url="https://github.com/UnQOfficial/UnQPerp",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -57,8 +57,8 @@ setup(
     zip_safe=False,
     keywords="ai artificial-intelligence codebase flask api tunnel perplexity development unqofficial",
     project_urls={
-        "Bug Reports": "https://github.com/sandeepgaddam/UnQOfficial/issues",
+        "Bug Reports": "https://github.com/UnQOfficial/UnQPerp/issues",
         "Source": "https://github.com/sandeepgaddam/UnQOfficial",
-        "Documentation": "https://github.com/sandeepgaddam/UnQOfficial/blob/main/README.md",
+        "Documentation": "https://github.com/UnQOfficial/UnQPerp/main/README.md",
     },
 )
