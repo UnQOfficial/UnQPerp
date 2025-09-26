@@ -75,7 +75,7 @@ python server.py
 #### For Linux/macOS/Termux(Android):
 ```bash
 git clone https://github.com/UnQOfficial/UnQPerp.git
-cd UnQOfficial
+cd UnQPerp
 chmod +x install.sh
 ./install.sh
 python server.py
