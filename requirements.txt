@@ -1,0 +1,16 @@
+# UnQPerp - AI CodeBase Bridge Requirements
+# Created by: Sandeep Gaddam
+
+# Core web framework
+Flask==3.0.0
+Flask-CORS==4.0.0
+
+# Additional utilities (optional)
+requests==2.31.0
+pathlib2==2.3.7
+
+# Development tools (optional)
+colorama==0.4.6
+
+# Note: cloudflared binary must be installed separately
+# Download from: https://github.com/cloudflare/cloudflared/releases
