@@ -2,7 +2,7 @@
 """
 UnQPerp - AI CodeBase Bridge
 Created by: Sandeep Gaddam
-GitHub: https://github.com/sandeepgaddam
+GitHub: https://github.com/UnQOfficial/UnQPerp
 
 A powerful tool that enables AI assistants to directly access and manage
 your local codebase through secure Cloudflare tunnels.
@@ -28,36 +28,91 @@ CORS(app)
 TOOL_NAME = "UnQPerp"
 TOOL_VERSION = "1.0.0"
 AUTHOR = "Sandeep Gaddam"
-GITHUB_URL = "https://github.com/sandeepgaddam"
+GITHUB_URL = "https://github.com/UnQOfficial/UnQPerp"
 
 # Base directory for code operations
 BASE_DIR = os.getcwd()
 
 def start_cloudflare_tunnel():
-    """Start Cloudflare tunnel automatically"""
+    """Start Cloudflare tunnel automatically and capture URL"""
     try:
         print("🌐 Starting Cloudflare tunnel...")
+
+        # Start tunnel process
         tunnel_process = subprocess.Popen([
             'cloudflared', 'tunnel', '--url', 'http://localhost:5000'
         ], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
-        # Wait for tunnel URL
-        time.sleep(3)
-        print("✅ Cloudflare tunnel started successfully!")
+        # Monitor tunnel output for URL
+        tunnel_url = None
+        timeout = 15  # Wait up to 15 seconds for URL
+        start_time = time.time()
+
+        while time.time() - start_time < timeout:
+            if tunnel_process.poll() is not None:
+                # Process has terminated
+                stderr_output = tunnel_process.stderr.read()
+                print(f"❌ Tunnel process terminated: {stderr_output}")
+                break
+
+            # Try to read a line from stderr (where cloudflared outputs the URL)
+            try:
+                line = tunnel_process.stderr.readline()
+                if line:
+                    print(f"🔍 Tunnel output: {line.strip()}")
+                    # Look for the tunnel URL in the output
+                    if "trycloudflare.com" in line:
+                        import re
+                        url_match = re.search(r'https://[\w-]+\.trycloudflare\.com', line)
+                        if url_match:
+                            tunnel_url = url_match.group(0)
+                            break
+            except:
+                pass
+
+            time.sleep(0.5)
+
+        if tunnel_url:
+            print(f"✅ Cloudflare tunnel started successfully!")
+            print(f"🔗 Tunnel URL: {tunnel_url}")
+            print(f"📋 Test URL: {tunnel_url}/api/status")
+
+            # Save tunnel URL to file for reference
+            with open('.tunnel_url', 'w') as f:
+                f.write(tunnel_url)
+
+        else:
+            print("⚠️  Tunnel started but URL not detected")
+            print("💡 Check tunnel status manually with: cloudflared tunnel --url http://localhost:5000")
+
         return tunnel_process
+
+    except FileNotFoundError:
+        print("❌ cloudflared not found. Please install cloudflared first:")
+        print("💡 Run: ./updated_install.sh")
+        return None
     except Exception as e:
         print(f"❌ Failed to start tunnel: {e}")
-        print("💡 Make sure cloudflared is installed and in PATH")
+        print("💡 Make sure cloudflared is installed and accessible")
         return None
 
 @app.route('/api/status', methods=['GET'])
 def status():
     """Server status check with tool information"""
+    tunnel_url = ""
+    try:
+        if os.path.exists('.tunnel_url'):
+            with open('.tunnel_url', 'r') as f:
+                tunnel_url = f.read().strip()
+    except:
+        pass
+
     return jsonify({
         'tool_name': TOOL_NAME,
         'version': TOOL_VERSION,
         'author': AUTHOR,
         'github': GITHUB_URL,
+        'tunnel_url': tunnel_url,
         'status': 'active',
         'base_dir': BASE_DIR,
         'python_version': sys.version,
@@ -328,13 +383,13 @@ def directory_tree():
 
 if __name__ == '__main__':
     print(f"""
-╔══════════════════════════════════════════════════════════════╗
-║                         🚀 {TOOL_NAME} v{TOOL_VERSION}                          ║
-║                   AI CodeBase Bridge Server                  ║
-║                                                              ║
-║  Created by: {AUTHOR}                              ║
-║  GitHub: {GITHUB_URL}                    ║
-╚══════════════════════════════════════════════════════════════╝
+╔════════════════════════════════════════════════════╗
+║                         🚀 {TOOL_NAME} v{TOOL_VERSION}      ║
+║                   AI CodeBase Bridge Server                 ║
+║                                                             ║
+║  Created by: {AUTHOR}                                       ║
+║  GitHub: {GITHUB_URL}                                       ║
+╚════════════════════════════════════════════════════╝
 
 📁 Base Directory: {BASE_DIR}
 🌐 Server starting at: http://localhost:5000
@@ -352,14 +407,15 @@ if __name__ == '__main__':
    • POST /api/git             - Git operations
    • POST /api/search          - Search codebase
    • GET  /api/tree            - Directory tree view
-
-🌐 Starting Cloudflare tunnel...
 """)
 
     # Start tunnel in background
     tunnel_thread = threading.Thread(target=start_cloudflare_tunnel)
     tunnel_thread.daemon = True
     tunnel_thread.start()
+
+    # Give tunnel a moment to start
+    time.sleep(2)
 
     # Start Flask server
     app.run(host='0.0.0.0', port=5000, debug=False)
