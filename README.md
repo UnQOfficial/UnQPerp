@@ -105,11 +105,11 @@ python server.py
 You'll see output like:
 ```
 ╔══════════════════════════════════════════════════════════════╗
-║                         🚀 UnQPerp v1.0.0                          ║
-║                   AI CodeBase Bridge Server                  ║
-║                                                              ║
-║  Created by: Sandeep Gaddam                              ║
-║  GitHub: https://github.com/UnQOfficial                   ║
+║                         🚀 UnQPerp v1.0.0                               ║
+║                   AI CodeBase Bridge Server                             ║
+║                                                                         ║
+║  Created by: Sandeep Gaddam                                             ║
+║  GitHub: https://github.com/UnQOfficial                                 ║
 ╚══════════════════════════════════════════════════════════════╝
 
 📁 Base Directory: /your/project/path
