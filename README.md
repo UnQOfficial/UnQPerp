@@ -1,6 +1,6 @@
 # 🚀 UnQPerp - AI CodeBase Bridge
 
-**Repository:** [UnQOfficial](https://github.com/UnQOfficial)  
+**Repository:** [UnQPerp](https://github.com/UnQOfficial/UnQPerp)  
 **Created by:** [Sandeep Gaddam](https://github.com/UnQOfficial)  
 **Version:** 1.0.0  
 **License:** MIT
@@ -37,8 +37,8 @@ UnQPerp is a powerful Flask-based server that enables AI assistants (like Perple
 
 #### Step 1: Clone Repository
 ```bash
-git clone https://github.com/UnQOfficial.git
-cd UnQOfficial
+git clone https://github.com/UnQOfficial/UnQPerp.git
+cd UnQPerp
 ```
 
 #### Step 2: Install Python Dependencies
@@ -74,7 +74,7 @@ python server.py
 
 #### For Linux/macOS:
 ```bash
-git clone https://github.com/sandeepgaddam/UnQOfficial.git
+git clone https://github.com/UnQOfficial/UnQPerp.git
 cd UnQOfficial
 chmod +x install.sh
 ./install.sh
@@ -83,7 +83,7 @@ python server.py
 
 #### For Windows PowerShell:
 ```powershell
-git clone https://github.com/sandeepgaddam/UnQOfficial.git
+git clone https://github.com/UnQOfficial/UnQPerp.git
 cd UnQOfficial
 pip install -r requirements.txt
 python server.py
@@ -91,7 +91,7 @@ python server.py
 
 ### Method 3: Python Package Installation
 ```bash
-pip install git+https://github.com/sandeepgaddam/UnQOfficial.git
+pip install git+https://github.com/UnQOfficial/UnQPerp.git
 unqperp
 ```
 
@@ -109,7 +109,7 @@ You'll see output like:
 ║                   AI CodeBase Bridge Server                  ║
 ║                                                              ║
 ║  Created by: Sandeep Gaddam                              ║
-║  GitHub: https://github.com/UnQOfficial                    ║
+║  GitHub: https://github.com/UnQOfficial                   ║
 ╚══════════════════════════════════════════════════════════════╝
 
 📁 Base Directory: /your/project/path
@@ -293,8 +293,8 @@ Contributions are welcome! Please feel free to:
 
 ### Development Setup
 ```bash
-git clone https://github.com/UnQOfficial.git
-cd UnQOfficial
+git clone https://github.com/UnQOfficial/UnQPerp.git
+cd UnQPerp
 pip install -r requirements.txt
 pip install -e .  # Install in development mode
 ```
@@ -310,8 +310,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 - **GitHub:** [@UnQOfficial](https://github.com/UnQOfficial)
-- **Repository:** [UnQOfficial](https://github.com/UnQOfficial)
-- **Issues:** [Report Issues](https://github.com/UnQOfficial/issues)
+- **Repository:** [UnQOfficial](https://github.com/UnQOfficial/UnQPerp)
+- **Issues:** [Report Issues](https://github.com/UnQOfficial/UnQPerp/issues)
 
 ---
 **Happy Coding with UnQPerp! 🤖✨**
