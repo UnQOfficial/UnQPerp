@@ -72,7 +72,7 @@ python server.py
 
 ### Method 2: Automated Installation
 
-#### For Linux/macOS:
+#### For Linux/macOS/Termux(Android):
 ```bash
 git clone https://github.com/UnQOfficial/UnQPerp.git
 cd UnQOfficial
