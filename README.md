@@ -84,7 +84,7 @@ python server.py
 #### For Windows PowerShell:
 ```powershell
 git clone https://github.com/UnQOfficial/UnQPerp.git
-cd UnQOfficial
+cd UnQPerp
 pip install -r requirements.txt
 python server.py
 ```
