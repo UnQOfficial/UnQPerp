@@ -1,7 +1,7 @@
 # 🚀 UnQPerp - AI CodeBase Bridge
 
-**Repository:** [UnQOfficial](https://github.com/sandeepgaddam/UnQOfficial)  
-**Created by:** [Sandeep Gaddam](https://github.com/sandeepgaddam)  
+**Repository:** [UnQOfficial](https://github.com/UnQOfficial)  
+**Created by:** [Sandeep Gaddam](https://github.com/UnQOfficial)  
 **Version:** 1.0.0  
 **License:** MIT
 
@@ -37,7 +37,7 @@ UnQPerp is a powerful Flask-based server that enables AI assistants (like Perple
 
 #### Step 1: Clone Repository
 ```bash
-git clone https://github.com/sandeepgaddam/UnQOfficial.git
+git clone https://github.com/UnQOfficial.git
 cd UnQOfficial
 ```
 
@@ -109,7 +109,7 @@ You'll see output like:
 ║                   AI CodeBase Bridge Server                  ║
 ║                                                              ║
 ║  Created by: Sandeep Gaddam                              ║
-║  GitHub: https://github.com/sandeepgaddam                    ║
+║  GitHub: https://github.com/UnQOfficial                    ║
 ╚══════════════════════════════════════════════════════════════╝
 
 📁 Base Directory: /your/project/path
@@ -271,8 +271,8 @@ sudo chown -R $USER:$USER .
 ```
 
 ### Getting Help
-- **Issues:** Report bugs at [GitHub Issues](https://github.com/sandeepgaddam/UnQOfficial/issues)
-- **Discussions:** Join discussions at [GitHub Discussions](https://github.com/sandeepgaddam/UnQOfficial/discussions)
+- **Issues:** Report bugs at [GitHub Issues](https://github.com/UnQOfficial/issues)
+- **Discussions:** Join discussions at [GitHub Discussions](https://github.com/UnQOfficial/discussions)
 - **Documentation:** Read `perplexity.md` for detailed API guide
 
 ## 🎉 Benefits
@@ -293,7 +293,7 @@ Contributions are welcome! Please feel free to:
 
 ### Development Setup
 ```bash
-git clone https://github.com/sandeepgaddam/UnQOfficial.git
+git clone https://github.com/UnQOfficial.git
 cd UnQOfficial
 pip install -r requirements.txt
 pip install -e .  # Install in development mode
@@ -309,9 +309,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Open source contributors** who make projects like this possible
 
 ## 📞 Contact
-- **GitHub:** [@sandeepgaddam](https://github.com/sandeepgaddam)
-- **Repository:** [UnQOfficial](https://github.com/sandeepgaddam/UnQOfficial)
-- **Issues:** [Report Issues](https://github.com/sandeepgaddam/UnQOfficial/issues)
+- **GitHub:** [@UnQOfficial](https://github.com/UnQOfficial)
+- **Repository:** [UnQOfficial](https://github.com/UnQOfficial)
+- **Issues:** [Report Issues](https://github.com/UnQOfficial/issues)
 
 ---
 **Happy Coding with UnQPerp! 🤖✨**
